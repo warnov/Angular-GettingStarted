@@ -21,6 +21,11 @@ export class ProductService {
             .catch(this.handleError);
     }
 
+    getProduct(id: number): IProduct{
+        let products: IProduct[]=this.getProducts()[0];
+        return products[0];
+    }
+
     private handleError(err: HttpErrorResponse) {
         console.log(err.message);
         return Observable.throw(err.message);
